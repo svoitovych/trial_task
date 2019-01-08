@@ -1,3 +1,49 @@
+@import 'normalize';
+
 body {
-  background-color: red;
+  position: relative;
+}
+
+.header {
+  .menu-wrap {
+    display: inline-block;
+    position: relative;
+  }
+
+  .menu-label {
+    width: 60px;
+    line-height: 60px;
+    background: grey;
+    display: block;
+    text-align: center;
+  }
+
+  .menu-dropdown {
+    display:none;
+    width: 200px;
+    padding:0;
+    margin:0;
+    background: green;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  .menu-dropdown li{
+    width:100%;
+    display:block;
+    padding:10px 0px; margin:0px;
+  }
+
+  #menu-check:checked ~ .menu-dropdown {
+    display:block;
+  }
+
+  #menu-check:checked ~ .menu-label {
+    background: green;
+  }
+
+  .nav {
+    display: inline-block;
+  }
 }
