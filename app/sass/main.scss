@@ -13,14 +13,17 @@ body {
     &:hover .ic-arrow-left{
       z-index: 3;
     }
+
+    &:hover .menu-link span {
+      display: inline-block;
+    }
   }
 
   .menu-label {
     width: 60px;
     height: 60px;
-    background: grey;
+    background-color: grey;
     display: block;
-    text-align: center;
     position: relative;
 
     &:hover {
@@ -28,6 +31,7 @@ body {
     }
 
     .ic {
+      background-color: grey;
       display: block;
       position: absolute;
       top: 50%;
@@ -40,7 +44,6 @@ body {
     }
 
     .ic-arrow-left {
-      z-index: 1;
       color: red;
       display: none;
     }
@@ -48,23 +51,41 @@ body {
 
   .menu-dropdown {
     display:none;
-    width: 200px;
-    padding:0;
-    margin:0;
-    background: green;
     position: absolute;
     top: 100%;
     left: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .menu-dropdown li{
-    width:100%;
-    display:block;
-    padding:10px 0px; margin:0px;
+  .menu-link-wrap {
+
+  }
+
+  .menu-link {
+    display: block;
+    text-decoration: none;
+    height: 30px;
+    position: relative;
+    padding-left: 20px;
+
+    i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+
+    span {
+      width: 150px;
+      display: none;
+      line-height: 30px;
+    }
   }
 
   #menu-check:checked ~ .menu-dropdown {
-    display:block;
+    display: block;
   }
 
   #menu-check:checked ~ .menu-label .ic-arrow-left {
