@@ -9,14 +9,41 @@ body {
   .menu-wrap {
     display: inline-block;
     position: relative;
+
+    &:hover .ic-arrow-left{
+      z-index: 3;
+    }
   }
 
   .menu-label {
     width: 60px;
-    line-height: 60px;
+    height: 60px;
     background: grey;
     display: block;
     text-align: center;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .ic {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ic-menu {
+      z-index: 2;
+    }
+
+    .ic-arrow-left {
+      z-index: 1;
+      color: red;
+      display: none;
+    }
   }
 
   .menu-dropdown {
@@ -40,8 +67,8 @@ body {
     display:block;
   }
 
-  #menu-check:checked ~ .menu-label {
-    background: green;
+  #menu-check:checked ~ .menu-label .ic-arrow-left {
+    display: block;
   }
 
   .nav {
